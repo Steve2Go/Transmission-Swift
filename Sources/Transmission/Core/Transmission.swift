@@ -28,7 +28,7 @@ public final class Transmission {
     ///   - baseURL: The URL of the Transmission server.
     ///   - username: The username used for authentication.
     ///   - password: The password used for authentication.
-    public init(baseURL: URL, username: String?, password: String?) {
+    public init(baseURL: URL, username: String?, password: String?, session: URLSession? = nil) {
         self.baseURL = baseURL
         self.username = username
         self.password = password
