@@ -12,8 +12,9 @@ public final class Transmission {
 
     /// The `URLSession` to use for requests.
     private lazy var session: URLSession = {
-        URLSession.shared
+        customSession ?? URLSession.shared
     }()
+    private let customSession: URLSession?
 
     /// The URL of the Transmission server.
     let baseURL: URL
@@ -31,6 +32,7 @@ public final class Transmission {
         self.baseURL = baseURL
         self.username = username
         self.password = password
+        self.customSession = session
     }
 
     /// Sends a request to the server.
